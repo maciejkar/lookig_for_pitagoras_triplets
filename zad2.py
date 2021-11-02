@@ -16,8 +16,7 @@ def pit(s):
 def pit2(s):
     """Function check if exist and give sizes of right triangle which have sum of side equal s
     @pam s: (int) sum of lenght of sides
-    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps
-    """
+    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps"""
     steps = 0 
     for a in range(1,s):
         for b in range(1,s):
@@ -32,10 +31,10 @@ def pit2(s):
 def pit3(s):
     """Function check if exist and give sizes of right triangle which have sum of side equal s
     @pam s: (int) sum of lenght of sides
-    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps
-    """
+    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps"""
     steps = 0 
     for a in range(1,s):
+        steps += 1
         for b in range(1,s - a):
             c = s - a -b
             steps += 7
@@ -47,10 +46,10 @@ def pit3(s):
 def pit4(s):
     """Function check if exist and give sizes of right triangle which have sum of side equal s
     @pam s: (int) sum of lenght of sides
-    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps
-    """
-    steps = 0 
+    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps"""
+    steps = 1
     for a in range(1,s // 2): # a + b > c
+        steps += 1
         for b in range(1,s - a):
             c = s - a -b
             steps += 7
@@ -62,10 +61,10 @@ def pit4(s):
 def pit5(s):
     """Function check if exist and give sizes of right triangle which have sum of side equal s
     @pam s: (int) sum of lenght of sides
-    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps
-    """
-    steps = 0 
-    for a in range(1,s // 2): 
+    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps"""
+    steps = 1
+    for a in range(1,s // 2):
+        steps += 5
         for b in range((s- 2*a)//2 ,s - a): # a + b > c => b > (s-2a)/2
             c = s - a -b
             steps += 7
@@ -77,10 +76,10 @@ def pit5(s):
 def pit6(s):
     """Function check if exist and give sizes of right triangle which have sum of side equal s
     @pam s: (int) sum of lenght of sides
-    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps
-    """
-    steps = 0 
+    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps"""
+    steps = 1
     for a in range(1,s // 2): 
+        steps += 6
         for b in range((s- 2*a)//2 ,s - 2*a): # a < c
             c = s - a -b
             steps += 7
@@ -92,10 +91,10 @@ def pit6(s):
 def pit7(s):
     """Function check if exist and give sizes of right triangle which have sum of side equal s
     @pam s: (int) sum of lenght of sides
-    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps
-    """
-    steps = 0 
-    for a in range(1,s // 3): # b <c
+    @return: (bool, int, int, int, int) (True ,a ,b ,c ,k) if tringle exist otherwise (False ,-1 ,-1 ,-1 ,k) where a, b and c are lenght of this trigle and k is nessesary steps"""
+    steps = 1
+    for a in range(1,s // 3): # b < c
+        steps += 7
         for b in range((s- 2*a)//2 ,s - 2*a): 
             c = s - a -b
             steps += 7
@@ -103,7 +102,6 @@ def pit7(s):
                 return True, a, b, c, steps
     
     return False , -1, -1, -1, steps
-
 
 
 
